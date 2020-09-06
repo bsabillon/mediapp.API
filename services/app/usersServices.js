@@ -36,6 +36,20 @@ var userMethods ={
             response.send("Error: "+ error)
             })        
     },
+    login: function(request, response){
+        User.findOne({
+            where: {
+                email: request.params.email,
+                password: request.body.password
+              } 
+        })
+        .then(user=>{
+            response.json(user);
+        })
+        .catch((error)=>{
+            response.send("Error: "+ error)
+            })        
+    },
 
     deleteUser: function(request,response){
         User.destroy({
