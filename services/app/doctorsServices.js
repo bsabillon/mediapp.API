@@ -28,7 +28,7 @@ var doctorMethods ={
                 })
     },
     getDoctorById: function(request, response){
-        Doctor.findAll({
+        Doctor.findOne({
             where: {
                 id: request.params.id
               } 

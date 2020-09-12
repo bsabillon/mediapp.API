@@ -1,4 +1,8 @@
 const Clinic = require('../../models/clinic');
+const sequelize = require('../../config/database');
+const { QueryTypes } = require('sequelize');
+const Doctor = require('../../models/doctor');
+const Specialty = require('../../models/specialty');
 
 var clinicMethods ={
 
@@ -15,7 +19,19 @@ var clinicMethods ={
     },
 
     getClinics: function(request, response){
-        Clinic.findAll()
+        Clinic.findAll({
+            include: [
+                {
+                    model: Doctor
+                },
+                {
+                    model:Specialty
+                }
+            ]
+        })
+        .then(clinic=>{
+            response.json(clinic);
+        })
             .then(clinic=>{
                 response.json(clinic);
             })

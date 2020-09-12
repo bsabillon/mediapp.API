@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('../config/database');
 const Doctor = require('../models/doctor');
+const Specialty = require('./specialty');
 
 const Clinic = database.define('clinics', {
     
@@ -24,6 +25,7 @@ const Clinic = database.define('clinics', {
 )
 
 Clinic.hasMany(Doctor);
+Clinic.hasMany(Specialty);
 
 
 
