@@ -22,9 +22,6 @@ var clinicMethods ={
         Clinic.findAll({
             include: [
                 {
-                    model: Doctor
-                },
-                {
                     model:Specialty
                 }
             ]
@@ -42,9 +39,6 @@ var clinicMethods ={
     getClinicById: function(request, response){
         Clinic.findAll({
             include: [
-                    {
-                        model: Doctor
-                    },
                     {
                         model:Specialty
                     }

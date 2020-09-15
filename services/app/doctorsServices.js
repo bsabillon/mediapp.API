@@ -64,6 +64,7 @@ var doctorMethods ={
             from "doctors"
             INNER JOIN clinics on "clinics"."id"= "doctors"."clinicId" 
             where "doctors"."specialtyId" = '${request.params.specialtyId}'
+            and "doctors"."clinicId" = '${request.params.clinicId}'
            ; `
            , {type: QueryTypes.SELECT}
         )
