@@ -41,6 +41,14 @@ var clinicMethods ={
     },
     getClinicById: function(request, response){
         Clinic.findAll({
+            include: [
+                    {
+                        model: Doctor
+                    },
+                    {
+                        model:Specialty
+                    }
+            ],
             where: {
                 id: request.params.id
               } 

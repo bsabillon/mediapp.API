@@ -8,7 +8,7 @@ var userMethods ={
             .then(user=>{
                 response
                 .status(200)
-                .send('user added successfully');
+                .send(user);
                 })
             .catch(error=>
                 response.send("Error: "+ error))
