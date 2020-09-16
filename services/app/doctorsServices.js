@@ -2,6 +2,9 @@ const Doctor = require('../../models/doctor');
 const Specialty = require('../../models/specialty');
 const sequelize = require('../../config/database');
 const { QueryTypes } = require('sequelize');
+const Schedule = require('../../models/schedule');
+const Day = require('../../models/day');
+const Hour = require('../../models/hour');
 
 
 var doctorMethods ={
@@ -29,6 +32,18 @@ var doctorMethods ={
     },
     getDoctorById: function(request, response){
         Doctor.findOne({
+            include: [
+                    {
+                        model:Schedule,
+                        include: [{
+                            model: Day
+                        },
+                    {
+                        model: Hour
+                    }
+                    ]
+                    }
+            ],
             where: {
                 id: request.params.id
               } 

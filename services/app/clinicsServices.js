@@ -37,7 +37,7 @@ var clinicMethods ={
                 })
     },
     getClinicById: function(request, response){
-        Clinic.findAll({
+        Clinic.findOne({
             include: [
                     {
                         model:Specialty

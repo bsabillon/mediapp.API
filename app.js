@@ -17,20 +17,16 @@ database
     console.error('Unable to connect to the database:', err);
   });
 
-//app.use('/roles', require('./routes/roles'));
-  //app.use('/tags',require('./routes/tags'));
-  //app.use('/categories',require('./routes/categories'));
-  //app.use('/products', require('./routes/products'));
-  //app.use('/driverReviews', require('./routes/driverReviews'));
-  //app.use('/stores', require('./routes/stores'));
-  //app.use('/storeCategories', require('./routes/storeCategories'));
-  //app.use('/storeReviews', require('./routes/storeReviews'));
-  //app.use('/storeTags', require('./routes/storeTags'));
-  //app.use('/addresses', require('./routes/adresses'));
+
   app.use('/users', require('./routes/users'));
   app.use('/clinics', require('./routes/clinics'));
   app.use('/doctors', require('./routes/doctors'));
   app.use('/specialties', require('./routes/specialties'));
+  app.use('/hours', require('./routes/hours'));
+  app.use('/days', require('./routes/days'));
+  app.use('/appointmentStates', require('./routes/appointmentStates'));
+  app.use('/appointments', require('./routes/appointments'));
+  app.use('/schedules', require('./routes/schedules'));
   
 
 
