@@ -1,6 +1,7 @@
 const Appointment = require('../../models/appointment');
 const AppointmentState = require('../../models/appointmentState');
 const Clinic = require('../../models/clinic');
+const Date = require('../../models/date');
 const Day = require('../../models/day');
 const Doctor = require('../../models/doctor');
 const Hour = require('../../models/hour');
@@ -40,7 +41,7 @@ var appointmentMethods ={
                 model: Doctor
             },
             {
-                model: Day
+                model: Date
             },
             {
                 model: Hour
@@ -76,7 +77,7 @@ var appointmentMethods ={
                     model: Doctor
                 },
                 {
-                    model: Day
+                    model: Date
                 },
                 {
                     model: Hour
@@ -106,14 +107,14 @@ var appointmentMethods ={
                     model: Doctor
                 },
                 {
-                    model: Day
+                    model: Date
                 },
                 {
                     model: Hour
                 }],
             where: {
                 doctorId: request.params.doctorId,
-                dayId: request.params.dayId,
+                dateId: request.params.dateId,
                 hourId: request.params.hourId
               } 
         })

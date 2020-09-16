@@ -27,7 +27,7 @@ database
   app.use('/appointmentStates', require('./routes/appointmentStates'));
   app.use('/appointments', require('./routes/appointments'));
   app.use('/schedules', require('./routes/schedules'));
-  
+  app.use('/dates', require('./routes/dates'));
 
 
   app.listen(PORT,console.log(`Server started on port: ${PORT}`));
